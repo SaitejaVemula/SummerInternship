@@ -14,24 +14,24 @@ html {
 }
 
 body {
-    width: 100vw;
-    height: 102vh;
-    position: relative;
-    background-image: url("bg.svg");
+    // min-width: 100vw;
+    // min-height: 100vh;
+    // position: relative;
+    background-image: $gradient1;
     background-size: cover;
     color: white;
-    overflow: hidden;
+    overflow-X: hidden;
 }
 
 .logo {
-    position: relative;
+    // position: relative;
     z-index: 5;
     box-sizing: content-box;
     display: block;
     height: 7rem;
     padding: 4rem;
+    margin: auto;
     @media (max-width: 70rem) {
-        margin: auto;
         width: 35vw;
     }
 }
@@ -41,20 +41,22 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    animation: rotate 5s linear infinite both;
+    z-index: -5;
+    // animation: rotate 5s linear infinite both;
     transform-origin: 50% 50%;
 
     &-1 {
-        top: -20vh;
+        // width: 25vw;
+        top: -15vh;
         left: 70vw;
-        transform: translate(-50%, 50%);
+        // transform: translate(-50%, 50%);
     }
 
     &-2 {
-        width: 20rem;
+        height: 18vh;
         top: 80vh;
-        left: -5vw;
-        transform: translate(-50%, -50%);
+        left: -2vw;
+        // transform: translate(-50%, -50%);
     }
 }
 
@@ -69,40 +71,47 @@ body {
     &1 {
         top: 20vh;
         left: 20vw;
-        animation: move 10s linear infinite;
+        // animation: move 10s linear infinite;
     }
     
     &2 {
         top: 85vh;
         left: 55vw;
-        animation: move 20s linear infinite;
+        // animation: move 20s linear infinite;
     }
     
     &3 {
         top: 60vh;
-        width: 75vw;
-        animation: move 5s linear infinite;
+        // width: 75vw;
+        left: 0;
+        // animation: move 5s linear infinite;
     }
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     font-size: 4vw;
     // background: #222;
+    margin: auto;
     max-width: 100rem;
+    height: 100vh;
 
     
     &__title {
+        font-weight: 900;
+        text-align: center;
         font-size: 10vw;
         padding: 1rem;
+        margin-top: 10vh;
         text-shadow: 0 5px 5px rgba(0,0,0,0.3);
 
         &::after {
             content: '';
             display: block;
+            margin: auto;
             margin-top: 2rem;
             width: 60%;
             height: 3px;
@@ -122,6 +131,7 @@ body {
     }
 
     &__timer {
+        margin: auto;
         text-shadow: 0 5px 5px rgba(0,0,0,0.3);
         tr:last-child {
             font-weight: 100;
@@ -147,14 +157,98 @@ body {
     }
 }
 
+.card__container {
+    color: black;
+    font-size: 1.6rem;
+
+    h2 {
+        color: white;
+        text-align: center;
+        font-weight: 900;
+        letter-spacing: 5px;
+        font-size: 4.5vw;
+        margin-bottom: 2rem;
+        text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
+        &::after {
+            content: "";
+            display: block;
+            background: white;
+            height: 4px;
+            width: 30vw;
+            margin: auto;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        }
+    }
+
+    .card-deck {
+        padding: 4rem;
+    }
+
+    .card {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .card-title {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 2.5rem;
+        text-shadow: 0 3px 5px rgba(0,0,0,0.15);
+
+        &::after {
+            content: '';
+            display: block;
+            background: black;
+            height: 3px;
+            width: 30px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+        }
+    }
+
+    .card-text {
+        line-height: 1.7;
+    }
+}
+
+.footer {
+    // padding: 2rem;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    background: rgba(0,0,0,0.3);
+    text-align: center;
+    text-transform: capitalize;
+
+    h3 {
+        padding-top: 4rem;
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        list-style: none;
+        padding: 0.8rem;
+        font-weight: 100;
+    }
+
+    .info {
+        font-weight: 100;
+        padding: 1rem 0;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background: #000;
+        color:#ccc;
+        letter-spacing: 1vw;
+    }
+}
 
 @keyframes rotate {
     0%  {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
